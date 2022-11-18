@@ -1,5 +1,8 @@
 module.exports = {
   "extends": "@istanbuljs/nyc-config-typescript",
+  "exclude": [
+    'src/Models/Connection.ts',   
+  ],
   "include": [
     "src/Models",
     "src/Services",
