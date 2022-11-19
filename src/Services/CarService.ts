@@ -1,5 +1,6 @@
 import Car from '../Domains/Car';
 import CustomError from '../helpers/customError';
+
 import ICar from '../Interfaces/ICar';
 import CarODM from '../Models/CarODM';
 
@@ -31,5 +32,14 @@ export default class CarService {
     if (!car) throw new CustomError(404, 'Car not found');
 
     return this.createCarDomain(car);
+  };
+
+  public updateById = async (car: ICar, id: string) => {
+    const carODM = new CarODM();
+    const carEdited = await carODM.updateById(car, id);
+
+    if (!carEdited) throw new CustomError(404, 'Car not found');
+
+    return this.createCarDomain(carEdited);
   };
 }
