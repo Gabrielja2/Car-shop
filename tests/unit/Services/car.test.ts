@@ -55,4 +55,13 @@ describe('Testando a rota /Cars', function () {
     
     expect(result).to.be.deep.equal(newCar);
   });
+
+  it('Verifica se da erro ao editar por um id inválido', async function () {
+    try {
+      const service = new CarService();
+      await service.updateById(validCar, 'invalid');
+    } catch (error) {
+      expect((error as Error).message).to.be.equal('Invalid mongo id');
+    }
+  });
 });
