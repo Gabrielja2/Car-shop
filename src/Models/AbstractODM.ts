@@ -1,12 +1,6 @@
-import {
-  Model,
-  model,
-  models,
-  Schema,
-  isValidObjectId,
-} from 'mongoose';
+import { Model, model, models, Schema, isValidObjectId } from 'mongoose';
 import CustomError from '../helpers/customError';
-import ICar from '../Interfaces/ICar';
+import IVeicule from '../Interfaces/IVehicle';
   
 abstract class AbstractODM<T> {
   protected model: Model<T>;
@@ -32,9 +26,9 @@ abstract class AbstractODM<T> {
     return this.model.findById(id);
   }
 
-  public async updateById(car: ICar, id: string): Promise<T | null> {
+  public async updateById(body: IVeicule, id: string): Promise<T | null> {
     if (!isValidObjectId(id)) throw new CustomError(422, 'Invalid mongo id');
-    return this.model.findByIdAndUpdate(id, { ...car }, { new: true });
+    return this.model.findByIdAndUpdate(id, { ...body }, { new: true });
   }
 }
   

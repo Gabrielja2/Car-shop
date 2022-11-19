@@ -2,8 +2,10 @@ import IMotorcycle from '../Interfaces/IMotorcycle';
 
 import Vehicle from './Vehicle';
 
+type CategoryTypes = 'Street' | 'Custom' | 'Trail';
+
 export default class Motorcycle extends Vehicle {
-  private category: string;
+  private category: CategoryTypes;
   private engineCapacity: number;
 
   constructor(motor: IMotorcycle) {

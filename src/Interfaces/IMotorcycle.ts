@@ -1,10 +1,8 @@
-export default interface IMotorcycle {  
-  id?: string,
-  model: string,
-  year: number,
-  color: string,
-  status?: boolean,
-  buyValue: number,
-  category: string,
+import IVeicule from './IVehicle';
+
+type CategoryTypes = 'Street' | 'Custom' | 'Trail';
+
+export default interface IMotorcycle extends IVeicule {
+  category: CategoryTypes,
   engineCapacity: number,
 }
