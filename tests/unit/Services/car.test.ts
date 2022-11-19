@@ -6,7 +6,7 @@ import { newCar, cars } from './carMock';
 import CarService from '../../../src/Services/CarService';
 import { validCar } from '../../../__tests__/utils/CarsMock';
 
-describe('Testando a rota /Cars', function () {
+describe('Testando a rota /cars', function () {
   afterEach(function () {
     sinon.restore();
   });
