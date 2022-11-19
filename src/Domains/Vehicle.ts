@@ -1,6 +1,6 @@
-import IVehicle from '../Interfaces/ICar';
+import IVehicle from '../Interfaces/IVehicle';
 
-export default abstract class Vehicle {
+export default class Vehicle {
   protected id?: string;
   protected model: string;
   protected year: number;
@@ -8,12 +8,12 @@ export default abstract class Vehicle {
   protected status?: boolean;
   protected buyValue: number;
 
-  constructor(car: IVehicle) {
-    this.id = car.id;
-    this.model = car.model;
-    this.year = car.year;
-    this.color = car.color;
-    this.status = car.status || false;
-    this.buyValue = car.buyValue;
+  constructor(veicle: IVehicle) {
+    this.id = veicle.id;
+    this.model = veicle.model;
+    this.year = veicle.year;
+    this.color = veicle.color;
+    this.status = veicle.status || false;
+    this.buyValue = veicle.buyValue;
   }
 }
