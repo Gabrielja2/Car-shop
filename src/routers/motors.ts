@@ -9,4 +9,6 @@ motorsRouter.get('/', (req, res, next) => new MotorcycleController(req, res, nex
 
 motorsRouter.get('/:id', (req, res, next) => new MotorcycleController(req, res, next).getById());
 
+motorsRouter.put('/:id', (req, res, next) => new MotorcycleController(req, res, next).update());
+
 export default motorsRouter;
