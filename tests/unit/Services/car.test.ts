@@ -46,4 +46,13 @@ describe('Testando a rota /Cars', function () {
       expect((error as Error).message).to.be.equal('Invalid mongo id');
     }
   });
+
+  it('Verifica se é possível editar um carro com sucesso', async function () {
+    sinon.stub(Model, 'findByIdAndUpdate').resolves(newCar);
+
+    const service = new CarService();
+    const result = await service.updateById(validCar, '6378d8777cf826f154b09e2a');
+    
+    expect(result).to.be.deep.equal(newCar);
+  });
 });
