@@ -4,7 +4,7 @@ import { Model } from 'mongoose';
 
 import { newCar, cars } from './carMock';
 import CarService from '../../../src/Services/CarService';
-import { validCar } from '../../../__tests__/utils/CarsMock';
+import { validCar } from '../../utils/CarsMock';
 
 describe('Testando a rota /cars', function () {
   afterEach(function () {
@@ -52,7 +52,7 @@ describe('Testando a rota /cars', function () {
 
     const service = new CarService();
     const result = await service.updateById(validCar, '6378d8777cf826f154b09e2a');
-    
+
     expect(result).to.be.deep.equal(newCar);
   });
 
