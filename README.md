@@ -3,7 +3,7 @@
 
 <strong>👨‍💻 O que foi desenvolvido</strong><br />
     Aqui você vai encontrar os detalhes de como foi estruturado este projeto e instruções para rodar.
-   Este projeto, segue os princípios de Programação Orientada a Objetos (POO) na construção da API com CRUD para gerenciar uma concessionária de veículos.
+    Este projeto, segue os princípios de Programação Orientada a Objetos (POO) na construção da API com CRUD para gerenciar uma concessionária de veículos.
    Foi feito utilizando o banco de dados MongoDB através do framework do Mongoose.
 
 
